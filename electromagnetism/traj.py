@@ -21,14 +21,12 @@ vy0 = np.array([0,  5, -5,  0,  0,  5, -5,  0])  # ms^-1
 
 
 E, B, theta = field(q, x0, y0, vx0, vy0, m, epsz, muz)
-Fcross, Etot, Btot = lorentz(q, x0, y0, vx0, vy0, m, epsz, muz)
-print(theta)
-print('E')
-print(E)
-print('Etot')
-print(Etot)
-# Fcross = np.cross(v[0], Btot[0])
-# Exy = E*np.array([np.cos(theta), np.sin(theta)])
-# Etot = [sum(Exy[0]), sum(Exy[1]),  np.zeros(len(vx0))]
-# print(Exy)
-# print(Etot)
+F, Etot, Btot, Ey = lorentz(q, x0, y0, vx0, vy0, m, epsz, muz)
+
+print('Lorentz Forces')
+print('Fx')
+print(F[0])
+print('Fy')
+print(F[1])
+print('Fz')
+print(F[2])
