@@ -2,7 +2,6 @@
 # From old Matlab code that had correct results (used as reference)
 
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 # from field import field  # Use for debugging
@@ -11,8 +10,8 @@ from euler_2Ddy import euler2d
 
 # Constants
 m = 9.109e-31  # [kg]
-epsz = 1e-9/36*math.pi  # epsilon zero [F/m]
-muz = (4e-7)*math.pi  # mu zero [H/m]
+epsz = 1e-9/36*np.pi  # epsilon zero [F/m]
+muz = (4e-7)*np.pi  # mu zero [H/m]
 
 # Initial conditions
 q = 1.602e-19*np.array([1, 1, 1, 1, -1, -1, -1, -1])

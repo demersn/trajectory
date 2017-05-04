@@ -9,12 +9,9 @@ from field import field
 def lorentz(q, x0, y0, vx0, vy0, m, epsz, muz):
     # We use the [field] function
     E, B, theta = field(q, x0, y0, vx0, vy0, m, epsz, muz)
-    #
     v = np.array([vx0, vy0, np.zeros(len(vx0))])
-    # theta = np.swapaxes(theta, 0, 1)
     Ex = E.dot(np.array(np.cos(theta)))
     Ey = E.dot(np.array(np.sin(theta)))
-    # Exy = np.swapaxes(Exy, 0, 1)
     Etot = [np.sum(Ex, axis=1), np.sum(Ey, axis=1), np.zeros(len(vx0))]
     Btot = [np.zeros(len(vx0)), np.zeros(len(vx0)), np.sum(B, axis=1)]
     # Cross products
